@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using world_time_app.Models;
+using world_time_app.Services;
 
 namespace world_time_app
 {
@@ -26,6 +28,9 @@ namespace world_time_app
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddHttpClient<ITimezone, TimezonesService>();
+            services.Configure<TimezoneModel>(Configuration.GetSection("Timezone"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

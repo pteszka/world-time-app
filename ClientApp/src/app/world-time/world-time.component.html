@@ -1,0 +1,12 @@
+<div class="content">
+    <h1 *ngIf="loading"><em>Loading... Please wait a few seconds.</em></h1>
+
+    <div *ngIf="errorMsg && !loading">
+        <h1 class="warning"><em>{{ errorMsg }}</em></h1>
+    </div>
+    
+    <div *ngIf="!errorMsg && !loading" class="text-center">
+        <h2>Current date time in {{ getPlace() }}</h2>
+        <h1>{{ time.datetime | date :'short' }}</h1>
+    </div>
+</div>
