@@ -41,9 +41,9 @@ export class WorldTimeComponent {
 
   getPlace(): string {
     if (this.time.region === "") {
-      return `${this.time.area}\\${this.time.location}`
+      return `${this.time.area}/${this.time.location}`
     }
-    return `${this.time.area}\\${this.time.location}\\${this.time.region}`
+    return `${this.time.area}/${this.time.location}/${this.time.region}`
   }
 }
 
